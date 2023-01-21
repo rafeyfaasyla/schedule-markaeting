@@ -3,15 +3,17 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-9">
                 @include('layouts/_flash')
                 <div class="card">
-                    <div class="card-header">
-                        Data jadwal
-                        <a href="{{ route('jadwal.create') }}" class="btn btn-sm btn-primary" style="float: right">
-                            Tambah Data
-                        </a>
-                    </div>
+                    @if (Auth::user()->role == 'admin')
+                        <div class="card-header">
+                            Data jadwal
+                            <a href="{{ route('jadwal.create') }}" class="btn btn-sm btn-primary" style="float: right">
+                                Tambah Data
+                            </a>
+                        </div>
+                    @endif
 
                     <div class="card-body">
                         <div class="table-responsive">
@@ -38,10 +40,13 @@
                                             <td>{{ $jadwal->project->nama_project }}</td>
                                             <td>{{ $jadwal->produk->nama_produk }}</td>
                                             <td>{{ $jadwal->activity->kegiatan }}</td>
-                                            <td>{{ $jadwal->activity->status }}</td>                                            <td>
+                                            <td>{{ $jadwal->activity->status }}</td>
+                                            <td>
+                                                 @if (Auth::user()->role == 'admin')
                                                 <form action="{{ route('jadwal.destroy', $jadwal->id) }}" method="post">
                                                     @csrf
                                                     @method('delete')
+                                                    @endif
 
                                                     <a href="{{ route('jadwal.show', $jadwal->id) }}"
                                                         class="btn btn-sm btn-outline-warning">
@@ -51,6 +56,7 @@
                                                         onclick="return confirm('Apakah Anda Yakin?')">Delete
                                                     </button>
                                                 </form>
+
                                             </td>
                                         </tr>
                                     @endforeach

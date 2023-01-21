@@ -44,7 +44,25 @@
                                     </span>
                                 @enderror
                             </div>
-
+                            <div class="mb-3">
+                                <label for="">katalog</label>
+                                <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="">
+                                @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Deskripsi</label>
+                                <input type="text" class="form-control  @error('deskripsi') is-invalid @enderror"
+                                    name="deskripsi" value="{{ $pro->deskripsi }}">
+                                @error('deskripsi')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
                             <div class="mb-3">
                                 <div class="d-grid gap-2">
                                     <button class="btn btn-primary" type="submit">Save</button>

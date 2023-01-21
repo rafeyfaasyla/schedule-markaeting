@@ -15,8 +15,9 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <div class="nav-item dropdown">
+                    <a href="{{ route('dashboard.index') }}" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    @if (Auth::user()->role == 'admin')
+                         <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Master data</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="{{ route('perusahaan.index') }}" class="dropdown-item">Company</a>
@@ -26,6 +27,7 @@
 
                         </div>
                     </div>
+                    @endif
                     <div class="navbar-nav w-100">
                         <a href="{{ route('jadwal.index') }}" class="nav-item nav-link"><i class="far fa-file-alt me-2"></i>Schadule</a>
                     </div>

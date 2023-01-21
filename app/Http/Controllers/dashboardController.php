@@ -20,11 +20,11 @@ class dashboardController extends Controller
     public function index()
     {
         //
-        $per = perusahaan::all();
-        $act = activity::all();
-        $pro = produk::all();
-        $projec = project::all();
-        return view('layouts.dashboard', compact('per','act','pro','projec'));
+        $per = perusahaan::all()->count();
+        $act = activity::all()->count();
+        $pro = produk::all()->count();
+        $projec = project::all()->count();
+        return view('admin.index', compact('per','act','pro','projec'));
 
 
     }

@@ -1,173 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>schadule marketing
+    </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-    <title>Cyborg - Awesome HTML5 Template</title>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset('asset/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('asset/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet" />
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{asset('asset/css/fontawesome.css')}}">
-    <link rel="stylesheet" href="{{asset('asset/css/templatemo-cyborg-gaming.css')}}">
-    <link rel="stylesheet" href="{{asset('asset/css/owl.css')}}">
-    <link rel="stylesheet" href="{{asset('asset/css/animate.css')}}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('asset/css/bootstrap.min.css') }}" rel="stylesheet">
 
-TemplateMo 579 Cyborg Gaming
-
-https://templatemo.com/tm-579-cyborg-gaming
-
--->
-  </head>
+    <!-- Template Stylesheet -->
+    <link href="{{ asset('asset/css/style.css') }}" rel="stylesheet">
+</head>
 
 <body>
-
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
-
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="assets/images/logo.png" alt="">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Search End ***** -->
-                    <div class="search-input">
-                      <form id="search" action="#">
-                        <input type="text" placeholder="Type Something" id='searchText' name="searchKeyword" onkeypress="handle" />
-                        <i class="fa fa-search"></i>
-                      </form>
-                    </div>
-                    <!-- ***** Search End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="details.html">Details</a></li>
-                        <li><a href="profile.html">Profile <img src="{{asset('asset/images/profile-header.jpg')}}" alt=""></a></li>
-                    </ul>   
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
         </div>
-    </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+        <!-- Spinn er End -->
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="page-content">
 
-          <!-- ***** Banner Start ***** -->
-          <div class="main-banner">
-            <div class="row">
-              <div class="col-lg-7">
-                <div class="header-text">
-                  <h6>Welcome To Tracy Bike</h6>
-                  <h4><em>Noleggio</em> bicicilette</h4>
-                  <div class="main-button">
-                    <a href="browse.html">Rent Now</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ***** Banner End ***** -->
+        <!-- Sideb ar Start -->
+        @include('layouts.component.sidebar')
+        <!-- Sidebar End -->
 
-          <!-- ***** Most Popular Start ***** -->
-       
-          <!-- ***** Most Popular End ***** -->
 
-          <!-- ***** Gaming Library Start ***** -->
-          <div class="gaming-library">
-            <div class="col-lg-12">
-              <div class="heading-section">
-                <h4><em>List Data Sepeda</em> </h4>
-              </div>
-              <div class="item">
-                <ul>
-                  <li><img src="assets/images/game-01.jpg" alt="" class="templatemo-item"></li>
-                  <li><h4>Dota 2</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>24/08/2036</span></li>
-                  <li><h4>Hours Played</h4><span>634 H 22 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border"><a href="login">Sewa</a></div></li>
-                </ul>
-              </div>
-              <div class="item">
-                <ul>
-                  <li><img src="assets/images/game-02.jpg" alt="" class="templatemo-item"></li>
-                  <li><h4>Fortnite</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>22/06/2036</span></li>
-                  <li><h4>Hours Played</h4><span>740 H 52 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button"><a href="login">Sewa</a></div></li>
-                </ul>
-              </div>
-              <div class="item last-item">
-                <ul>
-                  <li><img src="assets/images/game-03.jpg" alt="" class="templatemo-item"></li>
-                  <li><h4>CS-GO</h4><span>Sandbox</span></li>
-                  <li><h4>Date Added</h4><span>21/04/2036</span></li>
-                  <li><h4>Hours Played</h4><span>892 H 14 Mins</span></li>
-                  <li><h4>Currently</h4><span>Downloaded</span></li>
-                  <li><div class="main-border-button border"><a href="login">Sewa</a></div></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="main-button">
-                <a href="profile.html">View Your Library</a>
-              </div>
-            </div>
-          </div>
-          <!-- ***** Gaming Library End ***** -->
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            @include('layouts.component.navbar')
+            <!-- Navbar End -->
+
+
+            <!-- Sale & Revenue Start -->
+
+            <!-- Main content -->
+            @yield('content')
+            <!-- /.content -->
+
+
+
+            <!-- Back to Top -->
+            <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i
+                    class="bi bi-arrow-up"></i></a>
         </div>
-      </div>
-    </div>
-  </div>
-  
 
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('asset/lib/chart/chart.min.js') }}"></script>
+        <script src="{{ asset('asset/lib/easing/easing.min.js') }}"></script>
+        <script src="{{ asset('asset/lib/waypoints/waypoints.min.js') }}"></script>
+        <script src="{{ asset('asset/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+        <script src="{{ asset('asset/lib/tempusdominus/js/moment.min.js') }}"></script>
+        <script src="{{ asset('asset/lib/tempusdominus/js/moment-timezone.min.js') }}"></script>
+        <script src="{{ asset('asset/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-  <script src="{{asset('asset/js/isotope.min.js')}}"></script>
-  <script src="{{asset('asset/js/owl-carousel.js')}}"></script>
-  <script src="{{asset('asset/js/tabs.js')}}"></script>
-  <script src="{{asset('asset/js/popup.js')}}"></script>
-  <script src="{{asset('asset/js/custom.js')}}"></script>
-
-
-  </body>
+        <!-- Template Javascript -->
+        <script src="{{ asset('asset/js/main.js') }}"></script>
+</body>
 
 </html>
+<link rel="stylesheet" href="{{ asset('DataTables/datatables.min.css') }}">
+<script src="{{ asset('DataTables/datatables.min.js') }}"></script>
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+    });
+</script>

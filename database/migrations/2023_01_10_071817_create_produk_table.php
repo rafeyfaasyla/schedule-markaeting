@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('code_produk');
             $table->string('nama_produk');
             $table->string('jenis_produk');
+            $table->string('image');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }

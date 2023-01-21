@@ -10,7 +10,7 @@
                         Data produk
                     </div>
                     <div class="card-body">
-                        <form action="{{route('produk.store')}}" method="post">
+                        <form action="{{route('produk.store')}}" enctype="multipart/form-data" method="post">
                             @csrf
 
                             <div class="mb-3">
@@ -37,6 +37,25 @@
                                 <input type="jenis_produk" class="form-control  @error('jenis_produk') is-invalid @enderror"
                                     name="jenis_produk">
                                 @error('jenis_produk')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                              <div class="form-group">
+                                <label for="">katalog</label>
+                                <input type="file" name="image" class="form-control @error('image') is-invalid @enderror" id="">
+                                @error('image')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                             <div class="mb-3">
+                                <label class="form-label">Deskripsi</label>
+                                <input type="text" class="form-control  @error('deskripsi') is-invalid @enderror"
+                                    name="deskripsi">
+                                @error('deskripsi')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

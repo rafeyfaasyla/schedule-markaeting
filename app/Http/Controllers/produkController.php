@@ -45,12 +45,22 @@ class produkController extends Controller
             'code_produk' => 'required',
             'nama_produk' => 'required',
             'jenis_produk' => 'required',
+            'image' => 'required',
+            'deskripsi' => 'required',
 
         ]);
         $pro = new produk();
         $pro->code_produk = $request->code_produk;
         $pro->nama_produk = $request->nama_produk;
         $pro->jenis_produk = $request->jenis_produk;
+         if($request->hasFile('image')){
+            $foto = $request->file('image');
+            $name = rand(1000,9999).$foto->getClientOriginalName();
+            $foto->move('images/produk/', $name);
+            $pro->image = $name;
+        }
+        $pro->deskripsi = $request->deskripsi;
+
         $pro->save();
         return redirect()->route('produk.index')
         ->with('success', 'Data berhasil dibuat!');
@@ -96,12 +106,23 @@ class produkController extends Controller
             'code_produk' => 'required',
             'nama_produk' => 'required',
             'jenis_produk' => 'required',
+            'image' =>'nullable',
+            'deskripsi' => 'required',
+
 
         ]);
         $pro = produk::findOrFail($id);
         $pro->code_produk = $request->code_produk;
         $pro->nama_produk = $request->nama_produk;
         $pro->jenis_produk = $request->jenis_produk;
+        if($request->hasFile('image')){
+            $foto = $request->file('image');
+            $name = rand(1000,9999).$foto->getClientOriginalName();
+            $foto->move('images/produk/', $name);
+            $pro->image = $name;
+        }
+        $pro->deskripsi = $request->deskripsi;
+
         $pro->save();
         return redirect()->route('produk.index')
         ->with('success', 'Data berhasil diupdate!');

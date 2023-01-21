@@ -3,7 +3,7 @@
 @section('content')
     <div class="container-fluid pt-4 px-4">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-9">
                 @include('layouts/_flash')
                 <div class="card">
                     <div class="card-header">
@@ -22,6 +22,8 @@
                                         <th>Code produk</th>
                                         <th>Nama produk</th>
                                         <th>Jenis Produk</th>
+                                        <th>Katalog</th>
+                                        <th>Deskripsi</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -33,6 +35,8 @@
                                             <td>{{ $produk->code_produk }}</td>
                                             <td>{{ $produk->nama_produk }}</td>
                                             <td>{{ $produk->jenis_produk }}</td>
+                                            <td><img src="{{ $produk->image() }}" style="width: 140px; height: 140px;"></td>
+                                            <td>{{ $produk->deskripsi }}</td>
                                             <td>
                                                 <form action="{{ route('produk.destroy', $produk->id) }}" method="post">
                                                     @csrf
